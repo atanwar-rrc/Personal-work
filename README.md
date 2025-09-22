@@ -14,66 +14,29 @@ Before setting up this project, make sure you have the following installed:
   - Install globally: `npm install -g pnpm`
   - Verify installation: `pnpm --version`
 
-## Project Setup
+### Project Setup
 
-### Creating a New Project
-
-To create a new project using this template:
-
-```bash
-pnpm create vite [your-project-name] --template react-ts
-```
-
-Replace `[your-project-name]` with your desired project name.
-
-### Setting Up an Existing Project
-
-If you've cloned this repository:
-
-1. Navigate to the project directory:
-   ```bash
-   cd [your-project-name]
-   ```
-
-2. Install dependencies:
+1. Install dependencies:
    ```bash
    pnpm install
    ```
 
-## Adding Tailwind CSS v4
+2. Set environment variables:
+  Copy the `.env.template` file and create a `.env` file. The `API_URL` value should match the running URL of your back-end server.
 
-To add Tailwind CSS v4 to your Vite React project:
+## Getting Started
 
-1. **Install Tailwind CSS v4**:
+After setting up the project:
+
+1. Start the development server:
    ```bash
-   pnpm install tailwindcss @tailwindcss/vite
+   pnpm dev
    ```
 
-2. **Configure Vite**: Modify `vite.config.ts` to include the Tailwind plugin:
+2. Open your browser and navigate to `http://localhost:5173`
 
-   Add the import at the top:
-   ```typescript
-   import tailwindcss from "@tailwindcss/vite";
-   ```
+3. Start editing `src/App.tsx` to see changes in real-time
 
-   Add `tailwindcss()` to the plugins array:
-   ```typescript
-   import { defineConfig } from "vite";
-   import react from "@vitejs/plugin-react";
-   import tailwindcss from "@tailwindcss/vite";
-
-   // https://vite.dev/config/
-   export default defineConfig({
-     plugins: [react(), tailwindcss()],
-   });
-   ```
-
-3. **Update CSS file**: In `src/index.css`, remove all existing code and add:
-   ```css
-   @import "tailwindcss";
-   ```
-
-4. **Clean up**: Remove the `src/App.css` file as it's no longer needed with Tailwind.
 
 ## Available Scripts
 
@@ -104,16 +67,3 @@ To add Tailwind CSS v4 to your Vite React project:
 - **Vite** - Build tool and development server
 - **Tailwind CSS** - Utility-first CSS framework
 - **ESLint** - Code linting
-
-## Getting Started
-
-After setting up the project:
-
-1. Start the development server:
-   ```bash
-   pnpm dev
-   ```
-
-2. Open your browser and navigate to `http://localhost:5173`
-
-3. Start editing `src/App.tsx` to see changes in real-time

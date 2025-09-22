@@ -1,4 +1,4 @@
-# Vite React TypeScript Tailwind Template
+# RRC AI Tutor Client
 
 A modern React project template with TypeScript, Vite, and Tailwind CSS.
 

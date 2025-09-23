@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-// You can replace this with process.env.VITE_API_URL when you have the .env file set up
-const API_URL = 'http://localhost:3000';
-
 interface User {
   id: number;
   name: string;
@@ -221,6 +218,11 @@ function App() {
 
     try {
       let response;
+
+      const API_URL = import.meta.env.VITE_API_URL;
+
+      if (!API_URL) throw new Error("Missing API URL");
+
       const url = `${API_URL}${step.endpoint}`;
       
       switch (step.method) {

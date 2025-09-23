@@ -22,7 +22,8 @@ Before setting up this project, make sure you have the following installed:
    ```
 
 2. Set environment variables:
-  Copy the `.env.template` file and create a `.env` file. The `API_URL` value should match the running URL of your back-end server.
+  Copy the `.env.template` file and create a `.env` file. The `VITE_API_URL` value should match the running URL of your back-end server.
+  For local development, the API url will be the same address that your server is running on ("http://localhost:3000")
 
 ## Getting Started
 

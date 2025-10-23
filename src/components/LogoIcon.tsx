@@ -1,7 +1,9 @@
-import React from "react";
-
 /**
  * LogoIcon
+ * Purpose: Small sidebar icon button.
+ - Renders an inline SVG wrapped in a keyboard-accessible <button>.
+ - Currently a visual control only; behavior (toggling the sidebar) will be added later.
+ - className prop allows size and color to be adjusted with Tailwind utilities.
  * - Small interactive home button containing a simple book-like SVG.
  * - Designed to be reused wherever the app needs the primary logo/home control.
  *
@@ -36,7 +38,6 @@ export default function LogoIcon({ className = "w-10 h-10" }: { className?: stri
                     fill="#F7F6F2"
                     stroke="#2F3A45"
                     strokeWidth="2"
-                    vectorEffect="non-scaling-stroke"
                 />
                 {/* Inner vertical spine: white fill with stroke to suggest a book spine */}
                 <rect

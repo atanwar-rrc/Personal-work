@@ -1,33 +1,28 @@
-import React from "react";
 import CourseCard from "./CourseCard";
 
-/**
- * Purpose: Render the main "Courses" area and lay out cards.
- - Displays a large heading and a responsive grid of CourseCard components.
- - Uses a local sample list for now; easy to swap for an API later.
- - Keeps layout responsive so cards reflow across screen sizes.
- * Sample data for the course cards.
- * Replace with real data when available.
+/*
+ * Course catalog surface.
+ * Backend handoff:
+ *   - Replace `sampleCourses` with the API response once the courses endpoint is ready.
+ *     Maintain the `readyForChat` flag so the UI can keep distinguishing chat-enabled cohorts.
+ *   - If pagination or filtering is required later, this component is the entry point for that logic.
  */
 const sampleCourses = [
-    { id: "math-101", title: "Mathematics Fundamentals", code: "MATH-1098", instructor: "Michael Chen" },
+    { id: "DSA-101", title: "Data Structures and Algorithms", code: "DSA-101", instructor: "Jane Smith", readyForChat: true },
     { id: "cs-3000", title: "Computer Science", code: "COMP-3000", instructor: "Michael Chen" },
     { id: "sf-1200", title: "Software Fundamentals", code: "COMP-1200", instructor: "Michael Chen" },
     { id: "pd-2000", title: "Professional Development", code: "PDEV-2000", instructor: "Michael Chen" },
     { id: "web-1000", title: "Web Development", code: "WEBD-1000", instructor: "Michael Chen" },
 ];
 
-/**
- * CoursesGrid - page content area that shows a big heading and a grid of CourseCard components.
- * Uses Tailwind grid utilities to match the three up layout.
- */
+// Render a heading plus a responsive grid that delegates per-card rendering to CourseCard.
 export default function CoursesGrid() {
     return (
         <section>
-            {/* Big page heading similar */}
+            {/* Section title matches design spec and anchors the page for screen readers. */}
             <h1 className="text-4xl font-serif text-gray-900 mb-8">Courses</h1>
 
-            {/* grid: 3 columns on desktop, responsive shrink on smaller screens */}
+            {/* Grid responsively shifts between one, two, or three columns depending on viewport width. */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {sampleCourses.map((c) => (
                     <CourseCard
@@ -36,6 +31,7 @@ export default function CoursesGrid() {
                         title={c.title}
                         code={c.code}
                         instructor={c.instructor}
+                        readyForChat={c.readyForChat}
                     />
                 ))}
             </div>
